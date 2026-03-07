@@ -1,9 +1,11 @@
 const form = document.getElementById("clean-form");
 const fileInput = document.getElementById("file");
 const presetSelect = document.getElementById("preset");
+
 const statusEl = document.getElementById("status");
 const resultsEl = document.getElementById("results");
 const summaryEl = document.getElementById("summary");
+
 const downloadCleanedEl = document.getElementById("download-cleaned");
 const downloadReportEl = document.getElementById("download-report");
 const downloadSummaryEl = document.getElementById("download-summary");
@@ -17,6 +19,7 @@ function setStatus(message) {
 function resetResults() {
   resultsEl.style.display = "none";
   summaryEl.innerHTML = "";
+
   downloadCleanedEl.href = "#";
   downloadReportEl.href = "#";
   downloadSummaryEl.href = "#";
@@ -24,6 +27,7 @@ function resetResults() {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+
   resetResults();
 
   const file = fileInput.files[0];
@@ -43,18 +47,18 @@ form.addEventListener("submit", async (event) => {
 
     const response = await fetch(`${API_BASE_URL}/clean`, {
       method: "POST",
-      body: formData,
+      body: formData
     });
 
     if (!response.ok) {
-      let errorMessage = `Request failed with status ${response.status}`;
+      let message = `Request failed (${response.status})`;
+
       try {
-        const errorData = await response.json();
-        if (errorData.detail) {
-          errorMessage = errorData.detail;
-        }
+        const error = await response.json();
+        if (error.detail) message = error.detail;
       } catch (_) {}
-      throw new Error(errorMessage);
+
+      throw new Error(message);
     }
 
     const data = await response.json();
@@ -63,9 +67,14 @@ form.addEventListener("submit", async (event) => {
     const reportPath = encodeURIComponent(data.report_path);
     const summaryPath = encodeURIComponent(data.summary_path);
 
-    downloadCleanedEl.href = `${API_BASE_URL}/download/cleaned?path=${cleanedPath}`;
-    downloadReportEl.href = `${API_BASE_URL}/download/report?path=${reportPath}`;
-    downloadSummaryEl.href = `${API_BASE_URL}/download/summary?path=${summaryPath}`;
+    downloadCleanedEl.href =
+      `${API_BASE_URL}/download/cleaned?path=${cleanedPath}`;
+
+    downloadReportEl.href =
+      `${API_BASE_URL}/download/report?path=${reportPath}`;
+
+    downloadSummaryEl.href =
+      `${API_BASE_URL}/download/summary?path=${summaryPath}`;
 
     summaryEl.innerHTML = `
       <p><strong>Job ID:</strong> ${data.job_id}</p>
@@ -75,8 +84,8 @@ form.addEventListener("submit", async (event) => {
     `;
 
     resultsEl.style.display = "block";
-    setStatus("Done.");
-  } catch (error) {
-    setStatus(`Error: ${error.message}`);
+    setStatus("Cleaning complete.");
+  } catch (err) {
+    setStatus(`Error: ${err.message}`);
   }
 });
