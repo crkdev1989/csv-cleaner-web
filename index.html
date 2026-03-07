@@ -1,77 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSV Cleaner | CRK Dev</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="header container">
-    <a href="https://crkdev.com" class="brand">
-      <img src="assets/logo.png" alt="CRK Dev logo" />
-    </a>
+.cleaner-hero{
+  display:block;
+  padding-top:40px;
+  padding-bottom:20px;
+}
 
-    <nav class="nav">
-      <a href="https://crkdev.com">Home</a>
-      <a href="https://crkdev.com/portfolio">Portfolio</a>
-      <a href="https://crkdev.com/hire-me" class="nav-cta">Hire Me</a>
-    </nav>
-  </header>
+.cleaner-card{
+  max-width:760px;
+  margin:0 auto;
+}
 
-  <main class="container">
-    <section class="hero cleaner-hero">
-      <div class="card cleaner-card">
-        <h1>CSV Cleaner</h1>
-        <p class="subhead">
-          Upload messy CSV or Excel data and clean it instantly using CRK Dev presets.
-        </p>
+.cleaner-card h1{
+  font-size:44px;
+  line-height:1.1;
+  margin:0 0 14px;
+  text-align:left;
+}
 
-        <form id="clean-form">
-          <div class="form-group">
-            <label for="file">Upload File</label>
-            <input type="file" id="file" name="file" accept=".csv,.xlsx" required />
-          </div>
+.cleaner-card h2{
+  font-size:26px;
+  margin:0 0 14px;
+}
 
-          <div class="form-group">
-            <label for="preset">Preset</label>
-            <select id="preset" name="preset">
-              <option value="leads">Leads</option>
-              <option value="crm">CRM</option>
-              <option value="scrape">Scrape</option>
-            </select>
-          </div>
+.cleaner-card .subhead{
+  max-width:none;
+  margin:0 0 24px;
+}
 
-          <button type="submit">Clean File</button>
-        </form>
+.form-group{
+  margin-bottom:18px;
+}
 
-        <div id="status" class="status">Status: Ready</div>
-      </div>
-    </section>
+label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:700;
+}
 
-    <section id="results" class="results">
-      <div class="card cleaner-card">
-        <h2>Results</h2>
+input[type="file"],
+select{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+  font-size:15px;
+  outline:none;
+}
 
-        <div id="summary"></div>
+input[type="file"]:focus,
+select:focus{
+  border-color:rgba(46,169,230,.55);
+  box-shadow:0 0 0 3px rgba(46,169,230,.12);
+}
 
-        <div class="downloads">
-          <a id="download-cleaned" href="#" target="_blank" rel="noopener noreferrer">Download Cleaned File</a>
-          <a id="download-report" href="#" target="_blank" rel="noopener noreferrer">Download Report</a>
-          <a id="download-summary" href="#" target="_blank" rel="noopener noreferrer">Download Summary</a>
-        </div>
-      </div>
-    </section>
-  </main>
+button{
+  width:100%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border-radius:999px;
+  border:none;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  background:linear-gradient(
+    135deg,
+    rgba(96,165,250,.95),
+    rgba(52,211,153,.85)
+  );
+  color:#06121f;
+}
 
-  <footer class="footer container">
-    <div>© CRK Dev</div>
-    <div class="footer-right">
-      <a href="https://crkdev.com">Website</a>
-      <a href="https://github.com/crkdev1989">GitHub</a>
-    </div>
-  </footer>
+button:hover{
+  opacity:.96;
+}
 
-  <script src="app.js"></script>
-</body>
-</html>
+.status{
+  margin-top:18px;
+  padding:14px 16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:14px;
+  color:var(--muted);
+}
+
+.results{
+  display:none;
+  padding-bottom:20px;
+}
+
+#summary p{
+  margin:8px 0;
+  color:var(--muted);
+}
+
+#summary strong{
+  color:var(--text);
+}
+
+.downloads{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:18px;
+}
+
+.downloads a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  font-weight:700;
+}
+
+.downloads a:hover{
+  opacity:1;
+  border-color:rgba(255,255,255,.25);
+}
+
+@media (max-width: 900px){
+  .cleaner-card h1{
+    font-size:36px;
+  }
+}
