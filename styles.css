@@ -1,43 +1,153 @@
-.cleaner-hero{
-  display:block;
-  padding-top:40px;
-  padding-bottom:20px;
+:root{
+  --bg:#040813;
+  --panel:#111827;
+  --text:#e5e7eb;
+  --muted:#a3a3a3;
+  --border:rgba(255,255,255,.10);
+  --accent:#2EA9E6;
+  --accent2:#DCE3EE;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:18px;
 }
 
-.cleaner-card{
-  max-width:760px;
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+}
+
+body.tool-page{
+  font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(96,165,250,.18), transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(52,211,153,.12), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+
+.tool-page a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.tool-page a:hover{
+  opacity:.9;
+}
+
+.tool-shell{
+  max-width:1100px;
   margin:0 auto;
+  padding:0 20px;
 }
 
-.cleaner-card h1{
+.tool-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(10px);
+  background:rgba(4,8,19,.75);
+  border-bottom:1px solid var(--border);
+}
+
+.tool-header-inner{
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.tool-logo-link{
+  display:inline-flex;
+  align-items:center;
+  flex:0 0 auto;
+}
+
+.tool-logo{
+  display:block;
+  height:64px;
+  width:auto;
+  max-width:220px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 8px rgba(46,169,230,.25));
+}
+
+.tool-nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.tool-nav a{
+  color:var(--muted);
+}
+
+.tool-nav a:hover{
+  color:var(--text);
+}
+
+.tool-nav-cta{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text) !important;
+  font-weight:700;
+}
+
+.tool-main{
+  padding-top:40px;
+  padding-bottom:30px;
+}
+
+.tool-hero{
+  max-width:760px;
+  margin:0 auto 24px;
+}
+
+.tool-hero h1{
   font-size:44px;
   line-height:1.1;
   margin:0 0 14px;
-  text-align:left;
 }
 
-.cleaner-card h2{
-  font-size:26px;
-  margin:0 0 14px;
+.tool-subhead{
+  color:var(--muted);
+  font-size:18px;
+  margin:0;
 }
 
-.cleaner-card .subhead{
-  max-width:none;
-  margin:0 0 24px;
+.tool-card{
+  max-width:760px;
+  margin:0 auto 24px;
+  background:rgba(17,24,39,.75);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px;
 }
 
-.form-group{
+.tool-card-title{
+  margin:0 0 16px;
+  font-size:22px;
+}
+
+.tool-form-group{
   margin-bottom:18px;
 }
 
-label{
+.tool-form-group label{
   display:block;
   margin-bottom:8px;
   font-weight:700;
 }
 
-input[type="file"],
-select{
+.tool-form-group input[type="file"],
+.tool-form-group select{
   width:100%;
   padding:14px 16px;
   border-radius:14px;
@@ -48,13 +158,13 @@ select{
   outline:none;
 }
 
-input[type="file"]:focus,
-select:focus{
+.tool-form-group input[type="file"]:focus,
+.tool-form-group select:focus{
   border-color:rgba(46,169,230,.55);
   box-shadow:0 0 0 3px rgba(46,169,230,.12);
 }
 
-button{
+.tool-button{
   width:100%;
   display:inline-flex;
   align-items:center;
@@ -73,11 +183,11 @@ button{
   color:#06121f;
 }
 
-button:hover{
+.tool-button:hover{
   opacity:.96;
 }
 
-.status{
+.tool-status{
   margin-top:18px;
   padding:14px 16px;
   background:rgba(255,255,255,.03);
@@ -86,9 +196,8 @@ button:hover{
   color:var(--muted);
 }
 
-.results{
+.tool-results{
   display:none;
-  padding-bottom:20px;
 }
 
 #summary p{
@@ -100,14 +209,14 @@ button:hover{
   color:var(--text);
 }
 
-.downloads{
+.tool-downloads{
   display:flex;
   flex-direction:column;
   gap:10px;
   margin-top:18px;
 }
 
-.downloads a{
+.tool-downloads a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -119,13 +228,52 @@ button:hover{
   font-weight:700;
 }
 
-.downloads a:hover{
+.tool-downloads a:hover{
   opacity:1;
   border-color:rgba(255,255,255,.25);
 }
 
+.tool-footer{
+  border-top:1px solid var(--border);
+  margin-top:20px;
+}
+
+.tool-footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding-top:16px;
+  padding-bottom:26px;
+  color:var(--muted);
+}
+
+.tool-footer-links{
+  display:flex;
+  gap:12px;
+}
+
 @media (max-width: 900px){
-  .cleaner-card h1{
+  .tool-header-inner{
+    min-height:78px;
+  }
+
+  .tool-logo{
+    height:48px;
+    max-width:160px;
+  }
+
+  .tool-nav{
+    gap:10px;
+    font-size:14px;
+  }
+
+  .tool-hero h1{
     font-size:36px;
+  }
+
+  .tool-footer-inner{
+    flex-direction:column;
+    text-align:center;
   }
 }
