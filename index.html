@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSV Cleaner | CRK Dev</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSV Cleaner | CRK Dev</title>
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-  <div class="container">
-    <h1>CSV Cleaner</h1>
 
-    <p class="subtitle">
-      Upload a messy CSV or Excel file, choose a preset, and download a cleaned dataset.
-    </p>
+<header class="site-header">
+  <img src="assets/logo.png" class="logo">
+  <span class="brand">CRK Dev</span>
+</header>
 
-    <form id="clean-form">
-      <div class="form-group">
-        <label for="file">Upload File</label>
-        <input type="file" id="file" name="file" accept=".csv,.xlsx" required />
-      </div>
+<main class="container">
 
-      <div class="form-group">
-        <label for="preset">Preset</label>
-        <select id="preset" name="preset">
-          <option value="leads">Leads (contacts data)</option>
-          <option value="crm">CRM (phone + zip + state)</option>
-          <option value="scrape">Scrape (general scraped data)</option>
-        </select>
-      </div>
+<h1>CSV Cleaner</h1>
 
-      <button type="submit">Clean File</button>
-    </form>
+<p class="subtitle">
+Upload a messy CSV or Excel file and clean it instantly using preset pipelines.
+</p>
 
-    <div class="status" id="status">
-      Status: Ready
-    </div>
+<form id="clean-form">
 
-    <div class="results" id="results">
-      <h3>Results</h3>
+<div class="form-group">
+<label>Upload File</label>
+<input type="file" id="file" accept=".csv,.xlsx" required>
+</div>
 
-      <div id="summary"></div>
+<div class="form-group">
+<label>Preset</label>
+<select id="preset">
 
-      <div class="downloads">
-        <a id="download-cleaned" href="#" target="_blank" rel="noopener noreferrer">
-          Download Cleaned File
-        </a>
+<option value="leads">Leads</option>
+<option value="crm">CRM</option>
+<option value="scrape">Scrape</option>
 
-        <a id="download-report" href="#" target="_blank" rel="noopener noreferrer">
-          Download Report
-        </a>
+</select>
+</div>
 
-        <a id="download-summary" href="#" target="_blank" rel="noopener noreferrer">
-          Download Summary
-        </a>
-      </div>
-    </div>
+<button type="submit">Clean File</button>
 
-    <footer>
-      CRK Dev • CSV Cleaner
-    </footer>
-  </div>
+</form>
 
-  <script src="app.js"></script>
+<div id="status" class="status">
+Status: Ready
+</div>
+
+<div id="results" class="results">
+
+<h3>Results</h3>
+
+<div id="summary"></div>
+
+<div class="downloads">
+
+<a id="download-cleaned" href="#" target="_blank">Download Cleaned File</a>
+
+<a id="download-report" href="#" target="_blank">Download Report</a>
+
+<a id="download-summary" href="#" target="_blank">Download Summary</a>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+CRK Dev • Data Tools
+
+</footer>
+
+<script src="app.js"></script>
+
 </body>
 </html>
