@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CSV Cleaner | CRK Dev</title>
-
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV Cleaner | CRK Dev</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
-<header class="header">
-  <div class="container">
-
+  <header class="header container">
     <a href="https://crkdev.com" class="brand">
-      <img src="assets/logo.png" alt="CRK Dev">
+      <img src="assets/logo.png" alt="CRK Dev logo" />
     </a>
 
     <nav class="nav">
@@ -25,95 +17,61 @@
       <a href="https://crkdev.com/portfolio">Portfolio</a>
       <a href="https://crkdev.com/hire-me" class="nav-cta">Hire Me</a>
     </nav>
+  </header>
 
-  </div>
-</header>
+  <main class="container">
+    <section class="hero cleaner-hero">
+      <div class="card cleaner-card">
+        <h1>CSV Cleaner</h1>
+        <p class="subhead">
+          Upload messy CSV or Excel data and clean it instantly using CRK Dev presets.
+        </p>
 
+        <form id="clean-form">
+          <div class="form-group">
+            <label for="file">Upload File</label>
+            <input type="file" id="file" name="file" accept=".csv,.xlsx" required />
+          </div>
 
-<section class="hero container">
+          <div class="form-group">
+            <label for="preset">Preset</label>
+            <select id="preset" name="preset">
+              <option value="leads">Leads</option>
+              <option value="crm">CRM</option>
+              <option value="scrape">Scrape</option>
+            </select>
+          </div>
 
-<h1>CSV Cleaner</h1>
+          <button type="submit">Clean File</button>
+        </form>
 
-<p class="subhead">
-Upload messy CSV or Excel data and clean it instantly using CRK Dev pipelines.
-</p>
+        <div id="status" class="status">Status: Ready</div>
+      </div>
+    </section>
 
-</section>
+    <section id="results" class="results">
+      <div class="card cleaner-card">
+        <h2>Results</h2>
 
+        <div id="summary"></div>
 
-<section class="container">
+        <div class="downloads">
+          <a id="download-cleaned" href="#" target="_blank" rel="noopener noreferrer">Download Cleaned File</a>
+          <a id="download-report" href="#" target="_blank" rel="noopener noreferrer">Download Report</a>
+          <a id="download-summary" href="#" target="_blank" rel="noopener noreferrer">Download Summary</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="card">
+  <footer class="footer container">
+    <div>© CRK Dev</div>
+    <div class="footer-right">
+      <a href="https://crkdev.com">Website</a>
+      <a href="https://github.com/crkdev1989">GitHub</a>
+    </div>
+  </footer>
 
-<div class="card-title">Clean Your Dataset</div>
-
-<form id="clean-form">
-
-<div class="form-group">
-<label>Upload File</label>
-<input type="file" id="file" accept=".csv,.xlsx" required>
-</div>
-
-<div class="form-group">
-<label>Preset</label>
-<select id="preset">
-
-<option value="leads">Leads</option>
-<option value="crm">CRM</option>
-<option value="scrape">Scrape</option>
-
-</select>
-</div>
-
-<button type="submit">Clean File</button>
-
-</form>
-
-</div>
-
-
-<div id="status" class="status container">
-Status: Ready
-</div>
-
-
-<div id="results" class="container results">
-
-<div class="card">
-
-<h3>Results</h3>
-
-<div id="summary"></div>
-
-<div class="downloads">
-
-<a id="download-cleaned" href="#" target="_blank">Download Cleaned File</a>
-
-<a id="download-report" href="#" target="_blank">Download Report</a>
-
-<a id="download-summary" href="#" target="_blank">Download Summary</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer class="footer container">
-
-<div>© CRK Dev</div>
-
-<div class="footer-right">
-<a href="https://crkdev.com">Website</a>
-<a href="https://github.com/crkdev1989">GitHub</a>
-</div>
-
-</footer>
-
-<script src="app.js"></script>
-
+  <script src="app.js"></script>
 </body>
 </html>
