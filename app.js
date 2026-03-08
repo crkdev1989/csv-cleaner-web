@@ -10,7 +10,7 @@ const downloadCleanedEl = document.getElementById("download-cleaned");
 const downloadReportEl = document.getElementById("download-report");
 const downloadSummaryEl = document.getElementById("download-summary");
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://api.crkdev.com";
 
 function setStatus(message) {
   statusEl.textContent = `Status: ${message}`;
