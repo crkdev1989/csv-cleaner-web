@@ -136,6 +136,47 @@ body.tool-page{
   font-size:22px;
 }
 
+/* -----------------------
+   Stats Section
+----------------------- */
+
+.tool-stats-card{
+  padding:20px 24px;
+}
+
+.tool-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+
+.tool-stat{
+  padding:18px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  text-align:center;
+}
+
+.tool-stat-number{
+  font-size:32px;
+  line-height:1.1;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:6px;
+}
+
+.tool-stat-label{
+  font-size:14px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* -----------------------
+   Form
+----------------------- */
+
 .tool-form-group{
   margin-bottom:18px;
 }
@@ -196,6 +237,10 @@ body.tool-page{
   color:var(--muted);
 }
 
+/* -----------------------
+   Results
+----------------------- */
+
 .tool-results{
   display:none;
 }
@@ -233,6 +278,10 @@ body.tool-page{
   border-color:rgba(255,255,255,.25);
 }
 
+/* -----------------------
+   Footer
+----------------------- */
+
 .tool-footer{
   border-top:1px solid var(--border);
   margin-top:20px;
@@ -253,7 +302,12 @@ body.tool-page{
   gap:12px;
 }
 
+/* -----------------------
+   Responsive
+----------------------- */
+
 @media (max-width: 900px){
+
   .tool-header-inner{
     min-height:78px;
   }
@@ -270,6 +324,14 @@ body.tool-page{
 
   .tool-hero h1{
     font-size:36px;
+  }
+
+  .tool-stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tool-stat-number{
+    font-size:28px;
   }
 
   .tool-footer-inner{
