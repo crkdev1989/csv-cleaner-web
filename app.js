@@ -10,6 +10,9 @@ const downloadCleanedEl = document.getElementById("download-cleaned");
 const downloadReportEl = document.getElementById("download-report");
 const downloadSummaryEl = document.getElementById("download-summary");
 
+const filesCleanedEl = document.getElementById("files-cleaned-count");
+const rowsProcessedEl = document.getElementById("rows-processed-count");
+
 const API_BASE_URL = "https://api.crkdev.com";
 
 function setStatus(message) {
@@ -24,6 +27,35 @@ function resetResults() {
   downloadReportEl.href = "#";
   downloadSummaryEl.href = "#";
 }
+
+/* -----------------------------
+   Load stats from backend
+----------------------------- */
+
+async function loadStats() {
+  try {
+    const res = await fetch(`${API_BASE_URL}/stats`);
+    if (!res.ok) throw new Error("Failed to load stats");
+
+    const stats = await res.json();
+
+    filesCleanedEl.textContent =
+      Number(stats.files_cleaned || 0).toLocaleString();
+
+    rowsProcessedEl.textContent =
+      Number(stats.rows_processed || 0).toLocaleString();
+  } catch (err) {
+    filesCleanedEl.textContent = "0";
+    rowsProcessedEl.textContent = "0";
+  }
+}
+
+/* Load stats when page loads */
+loadStats();
+
+/* -----------------------------
+   Clean form submit
+----------------------------- */
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -85,6 +117,10 @@ form.addEventListener("submit", async (event) => {
 
     resultsEl.style.display = "block";
     setStatus("Cleaning complete.");
+
+    /* Refresh counters after successful clean */
+    loadStats();
+
   } catch (err) {
     setStatus(`Error: ${err.message}`);
   }
