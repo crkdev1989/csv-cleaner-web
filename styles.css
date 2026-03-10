@@ -185,6 +185,20 @@ body.tool-page{
 }
 
 /* -----------------------
+   Tool Limits
+----------------------- */
+
+.tool-limits-list{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.tool-limits-list li{
+  margin-bottom:8px;
+}
+
+/* -----------------------
    Stats Section
 ----------------------- */
 
