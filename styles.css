@@ -290,6 +290,36 @@ body.tool-page{
   opacity:.96;
 }
 
+.tool-sample-download{
+  margin-top:16px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+
+.tool-sample-label{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.tool-sample-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  font-weight:700;
+}
+
+.tool-sample-link:hover{
+  opacity:1;
+  border-color:rgba(255,255,255,.25);
+}
+
 .tool-status{
   margin-top:18px;
   padding:14px 16px;
