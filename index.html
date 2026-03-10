@@ -55,80 +55,86 @@
       </div>
     </section>
 
-    <section class="tool-card tool-how-it-works">
-      <h2 class="tool-card-title">How It Works</h2>
+    <section class="tool-layout">
+      <div class="tool-layout-main">
+        <section class="tool-card">
+          <h2 class="tool-card-title">Clean Your Dataset</h2>
 
-      <div class="tool-steps">
-        <div class="tool-step">
-          <div class="tool-step-number">1</div>
-          <h3>Upload file</h3>
-          <p>Select your file and choose the preset that best matches your dataset.</p>
-        </div>
+          <form id="clean-form">
+            <div class="tool-form-group">
+              <label for="file">Upload File</label>
+              <input type="file" id="file" name="file" accept=".csv,.xlsx" required />
+            </div>
 
-        <div class="tool-step">
-          <div class="tool-step-number">2</div>
-          <h3>Automatic cleanup</h3>
-          <p>The tool applies preset cleaning rules to normalize and clean common data issues.</p>
-        </div>
+            <div class="tool-form-group">
+              <label for="preset">Preset</label>
+              <select id="preset" name="preset">
+                <option value="leads">Leads</option>
+                <option value="crm">CRM</option>
+                <option value="scrape">Scrape</option>
+              </select>
+            </div>
 
-        <div class="tool-step">
-          <div class="tool-step-number">3</div>
-          <h3>Download cleaned file + report</h3>
-          <p>Download your cleaned output along with the generated summary and report files.</p>
-        </div>
-      </div>
-    </section>
+            <button type="submit" class="tool-button">Clean File</button>
+          </form>
 
-    <section class="tool-card">
-      <h2 class="tool-card-title">Clean Your Dataset</h2>
+          <div class="tool-sample-download">
+            <span class="tool-sample-label">Want to test it first?</span>
+            <a href="assets/sample.csv" download class="tool-sample-link">Try with Sample CSV</a>
+          </div>
 
-      <form id="clean-form">
-        <div class="tool-form-group">
-          <label for="file">Upload File</label>
-          <input type="file" id="file" name="file" accept=".csv,.xlsx" required />
-        </div>
+          <div id="status" class="tool-status">Status: Ready</div>
+        </section>
 
-        <div class="tool-form-group">
-          <label for="preset">Preset</label>
-          <select id="preset" name="preset">
-            <option value="leads">Leads</option>
-            <option value="crm">CRM</option>
-            <option value="scrape">Scrape</option>
-          </select>
-        </div>
+        <section id="results" class="tool-results">
+          <div class="tool-card">
+            <h2 class="tool-card-title">Results</h2>
 
-        <button type="submit" class="tool-button">Clean File</button>
-      </form>
+            <div id="summary"></div>
 
-      <div class="tool-sample-download">
-        <span class="tool-sample-label">Want to test it first?</span>
-        <a href="assets/sample.csv" download class="tool-sample-link">Try with Sample CSV</a>
+            <div class="tool-downloads">
+              <a id="download-cleaned" href="#" target="_blank" rel="noopener noreferrer">Download Cleaned File</a>
+              <a id="download-report" href="#" target="_blank" rel="noopener noreferrer">Download Report</a>
+              <a id="download-summary" href="#" target="_blank" rel="noopener noreferrer">Download Summary</a>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div id="status" class="tool-status">Status: Ready</div>
-    </section>
+      <aside class="tool-layout-side">
+        <section class="tool-card tool-how-it-works">
+          <h2 class="tool-card-title">How It Works</h2>
 
-    <section class="tool-card tool-limits-card">
-      <h2 class="tool-card-title">Tool Limits</h2>
+          <div class="tool-steps">
+            <div class="tool-step">
+              <div class="tool-step-number">1</div>
+              <h3>Upload file</h3>
+              <p>Select your file and choose the preset that best matches your dataset.</p>
+            </div>
 
-      <ul class="tool-limits-list">
-        <li>Supports CSV, Excel, JSON, and YAML inputs</li>
-        <li>Maximum file size: 10MB</li>
-      </ul>
-    </section>
+            <div class="tool-step">
+              <div class="tool-step-number">2</div>
+              <h3>Automatic cleanup</h3>
+              <p>The tool applies preset cleaning rules to normalize and clean common data issues.</p>
+            </div>
 
-    <section id="results" class="tool-results">
-      <div class="tool-card">
-        <h2 class="tool-card-title">Results</h2>
+            <div class="tool-step">
+              <div class="tool-step-number">3</div>
+              <h3>Download cleaned file + report</h3>
+              <p>Download your cleaned output along with the generated summary and report files.</p>
+            </div>
+          </div>
+        </section>
 
-        <div id="summary"></div>
+        <section class="tool-card tool-limits-card">
+          <h2 class="tool-card-title">Tool Limits</h2>
 
-        <div class="tool-downloads">
-          <a id="download-cleaned" href="#" target="_blank" rel="noopener noreferrer">Download Cleaned File</a>
-          <a id="download-report" href="#" target="_blank" rel="noopener noreferrer">Download Report</a>
-          <a id="download-summary" href="#" target="_blank" rel="noopener noreferrer">Download Summary</a>
-        </div>
-      </div>
+          <ul class="tool-limits-list">
+            <li>Supports CSV, Excel, JSON, and YAML inputs</li>
+            <li>Maximum file size: 10MB</li>
+          </ul>
+        </section>
+      </aside>
     </section>
 
     <!-- NEW CONVERSION BLOCK -->
