@@ -328,7 +328,8 @@ body.tool-page{
 ----------------------- */
 
 .tool-how-it-works .tool-card-title,
-.tool-limits-card .tool-card-title{
+.tool-limits-card .tool-card-title,
+.tool-example-card .tool-card-title{
   margin-bottom:14px;
 }
 
@@ -377,6 +378,41 @@ body.tool-page{
 
 .tool-limits-list li{
   margin-bottom:8px;
+}
+
+/* -----------------------
+   Before / After Example
+----------------------- */
+
+.tool-example-card{
+  overflow:hidden;
+}
+
+.tool-example-block + .tool-example-block{
+  margin-top:14px;
+}
+
+.tool-example-label{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--accent2);
+  margin-bottom:8px;
+}
+
+.tool-example-code{
+  margin:0;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  white-space:pre-wrap;
+  word-break:break-word;
+  overflow-x:auto;
 }
 
 /* -----------------------
