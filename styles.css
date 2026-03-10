@@ -279,6 +279,42 @@ body.tool-page{
 }
 
 /* -----------------------
+   Custom Cleaning CTA
+----------------------- */
+
+.tool-upgrade-text{
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+.tool-upgrade-list{
+  margin:0 0 20px;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.tool-upgrade-list li{
+  margin-bottom:8px;
+}
+
+.tool-upgrade-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  font-weight:700;
+  transition:.15s;
+}
+
+.tool-upgrade-button:hover{
+  border-color:rgba(255,255,255,.25);
+}
+
+/* -----------------------
    Footer
 ----------------------- */
 
