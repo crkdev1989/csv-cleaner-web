@@ -145,6 +145,46 @@ body.tool-page{
 }
 
 /* -----------------------
+   How It Works
+----------------------- */
+
+.tool-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.tool-step{
+  padding:16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+}
+
+.tool-step-number{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:rgba(96,165,250,.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.tool-step h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.tool-step p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* -----------------------
    Stats Section
 ----------------------- */
 
@@ -368,6 +408,10 @@ body.tool-page{
 
   .tool-hero h1{
     font-size:36px;
+  }
+
+  .tool-steps{
+    grid-template-columns:1fr;
   }
 
   .tool-stats-grid{
