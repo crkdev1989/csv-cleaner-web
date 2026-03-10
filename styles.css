@@ -131,7 +131,7 @@ body.tool-page{
 
 .tool-layout{
   display:grid;
-  grid-template-columns:minmax(0, 1.2fr) minmax(300px, .8fr);
+  grid-template-columns:minmax(0, 1.45fr) 340px;
   gap:24px;
   align-items:start;
   margin-bottom:24px;
@@ -142,6 +142,7 @@ body.tool-page{
   display:flex;
   flex-direction:column;
   gap:24px;
+  min-width:0;
 }
 
 .tool-card{
@@ -158,64 +159,6 @@ body.tool-page{
   margin:0 0 16px;
   font-size:22px;
 }
-
-/* -----------------------
-   How It Works
------------------------ */
-
-.tool-steps{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-}
-
-.tool-step{
-  padding:16px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.03);
-}
-
-.tool-step-number{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:rgba(96,165,250,.2);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.tool-step h3{
-  margin:0 0 6px;
-  font-size:16px;
-}
-
-.tool-step p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* -----------------------
-   Tool Limits
------------------------ */
-
-.tool-limits-list{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-}
-
-.tool-limits-list li{
-  margin-bottom:8px;
-}
-
-/* -----------------------
-   Stats Section
------------------------ */
 
 .tool-stats-card{
   max-width:760px;
@@ -251,10 +194,6 @@ body.tool-page{
   text-transform:uppercase;
   color:var(--muted);
 }
-
-/* -----------------------
-   Form
------------------------ */
 
 .tool-form-group{
   margin-bottom:18px;
@@ -346,10 +285,6 @@ body.tool-page{
   color:var(--muted);
 }
 
-/* -----------------------
-   Results
------------------------ */
-
 .tool-results{
   display:none;
 }
@@ -357,6 +292,7 @@ body.tool-page{
 #summary p{
   margin:8px 0;
   color:var(--muted);
+  overflow-wrap:anywhere;
 }
 
 #summary strong{
@@ -385,6 +321,62 @@ body.tool-page{
 .tool-downloads a:hover{
   opacity:1;
   border-color:rgba(255,255,255,.25);
+}
+
+/* -----------------------
+   Right Rail
+----------------------- */
+
+.tool-how-it-works .tool-card-title,
+.tool-limits-card .tool-card-title{
+  margin-bottom:14px;
+}
+
+.tool-steps{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.tool-step{
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+}
+
+.tool-step-number{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:rgba(96,165,250,.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.tool-step h3{
+  margin:0 0 6px;
+  font-size:15px;
+}
+
+.tool-step p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+.tool-limits-list{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.tool-limits-list li{
+  margin-bottom:8px;
 }
 
 /* -----------------------
